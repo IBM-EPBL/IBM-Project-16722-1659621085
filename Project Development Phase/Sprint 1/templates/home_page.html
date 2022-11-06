@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+} 
+
+.navbar {
+  overflow: hidden;
+  background-color: none;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgba(24, 221, 221, 0.445);
+  border-radius: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* styling search bar */
+.search input[type=text]{
+  width:300px;
+  height:25px;
+  border-radius:25px;
+  border: none; 
+}
+.search{
+  float:right;
+  margin:7px;
+}    
+.search button{
+  background-color: #0074D9;
+  color: #f2f2f2;
+  float: right;
+  padding: 5px 10px;
+  margin-right: 16px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body background = "{{url_for('static',filename = 'flight.jpg')}}">
+  
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="https://www.flightradar24.com/11.03,77.04/8">
+    Flight Finder
+  </a>
+  <div class="dropdown">
+    <button class="dropbtn">Industry
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Airports</a>
+      <a href="#">Airlines</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Delay and cancellations
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Cancellations</a>
+      <a href="#">Flight Delay</a>
+    </div>
+  </div>
+ 
+  <a href="{{url_for('signup')}}">Sign Up</a>
+  
+  <!-- search bar right align -->
+  <div class="search">       
+    <form action="#">
+      <input type="text" placeholder=" Search... " name="search">
+        <button>
+            <i class="fa fa-search" style="font-size: 18px;"></i>
+        </button>
+        {{msg}}
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
