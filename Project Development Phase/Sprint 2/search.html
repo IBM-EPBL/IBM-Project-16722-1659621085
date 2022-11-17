@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.search {
+  width: 300px;
+  position: fixed;
+}
+
+.searchTerm {
+  width: 300px;
+  border: 3px solid #e9eff0;
+  padding: 10px;
+  height: 20px;
+  border-radius: 50px;
+  outline: none;
+  color: #0b0c0b;
+}
+
+.searchButton {
+  width: 300px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background:black;
+  text-align: center;
+  color: rgb(10, 10, 10);
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.wrap{
+  width: 0%;
+  position: absolute;
+  top: 55%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="search">
+        <div class="dropdown">
+            <button class="dropbtn">
+                <input type class="searchTerm" placeholder="Select Your Airport">
+            </button>
+            <div class="dropdown-content">
+                <a href="https://www.mspairport.com/flights-and-airlines/flights?text=&flight_type=arrival">MSP(Minneapolis−Saint Paul International Airport)</a>
+                <a href="https://www.detroit-airport.com/dtw-metro-departures">DTW(Detroit Metropolitan Wayne County Airport)</a>
+                <a href="https://www.jfkairport.com/flight/airlines">JFK(John F. Kennedy International Airport)</a>
+                <a href="https://www.portseattle.org/sea-tac">SEA(Seattle-Tacoma International Airport)</a>
+                <a href="https://atlfly.com/airlines">ALT(Hartsfield-Jackson Atlanta International Airport)</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
