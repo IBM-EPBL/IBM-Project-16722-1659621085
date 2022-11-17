@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prediction</title>
+    <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+      background-image: url(https://www.incimages.com/uploaded_files/image/1920x1080/getty_858472558_411028.jpg);
+    } 
+    .container{
+      width: 100%;
+      height: 100vh;
+      font-family: sans-serif;
+      color: black;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card{
+      margin-left: -700px;
+      width: 550px;
+      height: 700px;
+      box-shadow: 0 0 40px rgba(252, 250, 250, 0.26);
+      perspective: 1000px;
+    }
+    .inner-box{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-front{
+      position: absolute;
+      width:100%;
+      height: 100%;
+      background-position: center;;
+      background-size: cover;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9),rgba(252, 249, 249, 0.9));
+      padding: 55px;
+      box-sizing: border-box;
+      backface-visibility: hidden;
+      border-radius: 10px 10px 10px 10px;
+      
+    }
+   .input-box{
+      width: 100%;
+      background: transparent;
+      border: 1px solid rgb(8, 7, 7);
+      margin: 6px 0;
+      height: 32px;
+      border-radius: 20px;
+      padding: 0 10px;
+      box-sizing: border-box;
+      outline: none;
+      text-align: center;
+      color: rgb((10, 9, 9)10, 9, 9);
+    }
+    ::placeholder{
+      color: rgb(3, 3, 3);
+      font-size: 12px;
+    }
+    button{
+      width: 100%;
+      background: transparent;
+      border: 1px solid rgb(5, 5, 5);
+      margin: 35px 0 10px;
+      height: 32px;
+      border-radius: 20px;
+      padding: 0 10px;
+      box-sizing: border-box;
+      outline: none;
+      color: rgb(2, 2, 2);
+      cursor:pointer;
+      font-size: 12px; 
+      padding: 10px;
+    }
+    .submit-btn{
+      position: relative;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px;
+    }
+    .submit-btn::after{
+      color: rgb(182, 179, 179);
+      line-height: 32px;
+      height: 20px;
+      width: 32px;
+      border-radius: 50%;
+      background: rgb(2, 2, 2);
+      background-image: rgba(90, 90, 206, 0.521);
+      position: absolute;
+      right: -1px;
+      top: -1px;
+    }
+    .card .btn{
+      margin-top: 70px;
+    } 
+    .dropdown-content{
+        position: absolute;
+        min-width: 160px;
+    }
+    
+    /* .datalist{
+        top
+    }
+     */
+  </style>    
+  </head>
+    <body>
+      <div class="container">
+        <div class="card">
+          <div class="inner-box">
+            <div class="card-front">
+                <form action="/prediction" method="POST">
+                  <label for="">Flight Number:</label>
+                  <input type="flight number" class="input-box" placeholder="Flight Number" name = "name" required>
+                  <label for="">Month:</label>
+                  <input type="number" class="input-box" placeholder="Month" name = "month" minlength = "12" required>
+                  <label for="">Day Of Month:</label>
+                  <input type="number" class="input-box" placeholder="Day of Month" name = "day_of_month" minlength = "31" required>
+                  <label for="">Day Of Week:</label>
+                  <input type="number" class="input-box" placeholder="Day of Week" name = "day_of_week" minlength = "7" required>
+                  <label for="org">Origin:</label>
+                  <br>
+                  <div class="droplist">
+
+                  <select name="origin" style="width:200px;">
+                    <option value="">
+                      <option value="MSP">MSP</option>
+                      <option value="DTW">DTW</option>
+                      <option value="JFK">JFK</option>
+                      <option value="SEA">SEA</option>
+                      <option value="ALT">ALT</option>
+                  </select>
+                </div>
+                  <br>
+                  <label for="dest">Destination:</label>
+                  <br>
+                  <select name="destination" style="width:200px;">
+                    <option value="">
+                      <option value="MSP">MSP</option>
+                      <option value="DTW">DTW</option>
+                      <option value="JFK">JFK</option>
+                      <option value="SEA">SEA</option>
+                      <option value="ALT">ALT</option>
+                  </select>
+                  <br><br>
+                  <label for="">Scheduled Departure Time:</label>
+                  <input type="number" class="input-box" placeholder="Scheduled Departure Time" name = "dept" minlength = "24"  required>
+                  <label for="">Scheduled Arrival Time:</label>
+                  <input type="number" class="input-box" placeholder="Scheduled Arrival Time" name = "arrtime" minlength = "24" required>
+                  <label for="">Actual Departure Time:</label>
+                  <input type="number" class="input-box" placeholder="Actual Departure Time" name = "actdept"  minlength = "24"required>
+                  <input class ="submit" type = "submit" value = "SUBMIT" >
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </body>
+</html>
