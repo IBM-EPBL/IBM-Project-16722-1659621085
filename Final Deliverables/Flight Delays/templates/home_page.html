@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/9a03e12720.js" crossorigin="anonymous"></script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+} 
+
+.navbar {
+  overflow: hidden;
+  background-color: none;
+  padding:10px;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  border-radius: 10px;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(164, 163, 163);
+  border-radius: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 15px 10px; 
+  text-decoration: none;
+  width:300px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color:rgb(164, 163, 163);
+  width: 347px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  width: 365px;
+}
+
+.logo{
+  display:flex;
+  flex-direction:right;
+  justify-content: space-between;
+  padding-top: 0px;
+  padding-right:30px;
+  height: 70px;
+  width: 70px;
+}
+
+.search {
+  width: 300px;
+  position: fixed;
+}
+
+.searchTerm {
+  width: 300px;
+  border: 3px solid #e9eff0;
+  padding: 10px;
+  height: 20px;
+  border-radius: 50px;
+  outline: none;
+  color: #0b0c0b;
+}
+
+.searchButton {
+  width: 300px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background:black;
+  text-align: center;
+  color: rgb(10, 10, 10);
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.wrap{
+  width: 0%;
+  position: absolute;
+  top: 35%;
+  left: 39%;
+  transform: translate(-50%, -50%);
+}
+
+i{
+  padding: 10px;
+  color:white;
+}
+</style>
+</head>
+<body background = "{{url_for('static',filename = 'flight.jpg')}}">
+  <a href="#home"><img src="{{url_for('static',filename = 'newlog.png')}}" class="logo" align="right" title="FlyHigh"></a>
+<div class="navbar">
+  <a href="#home">  <i class="fa-solid fa-house"></i>Home</a>
+  <!--<a href="https://www.flightradar24.com/11.03,77.04/8">
+    Flight Finder
+  </a>-->
+  <a href="{{url_for('prediction')}}"><i class="fa-solid fa-plane-circle-exclamation"></i>Prediction</a>
+  <a href="{{url_for('signup')}}"><i class="fa-solid fa-right-to-bracket"></i></i>Sign Up</a>
+</div>
+
+<div class="wrap">
+  <div class="search">
+      <div class="dropdown">
+          <button class="dropbtn">
+              <input type class="searchTerm" placeholder="Select Your Airport">
+          </button>
+          <div class="dropdown-content">
+              <a href="https://www.mspairport.com/flights-and-airlines/flights?text=&flight_type=arrival">MSP(Minneapolis−Saint Paul International Airport)</a>
+              <a href="https://www.detroit-airport.com/dtw-metro-departures">DTW(Detroit Metropolitan Wayne County Airport)</a>
+              <a href="https://www.jfkairport.com/flight/airlines">JFK(John F. Kennedy International Airport)</a>
+              <a href="https://www.portseattle.org/sea-tac">SEA(Seattle-Tacoma International Airport)</a>
+              <a href="https://atlfly.com/airlines">ALT(Hartsfield-Jackson Atlanta International Airport)</a>
+          </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prediction</title>
+    <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+    } 
+    p{
+      display: block;
+      font-size: 60px;
+    }
+    .card-front{
+      position: absolute;
+      width:100%;
+      height: 100%;
+      padding: 50px;
+      box-sizing: border-box;
+      border-radius: 10px 10px 10px 10px;
+    }
+      
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  padding:20px;
+}
+
+.column {
+  display: flex;
+  flex-basis: 50%;
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  padding-left: 0px;
+}
+
+.container {
+  position: absolute;
+  background-color: rgb(209, 217, 219);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+  border-radius: 3px;
+  padding-left: 0px;
+}
+
+a{
+  text-decoration: none;
+  font-size: 20;
+  float: none;
+  color: black;
+  padding: 3px 5px;
+  display: block;
+  text-align: center;
+}
+
+a:hover {
+  background-color: #ddd;
+  display: block;
+}
+
+
+.logo{
+  display:flex;
+  flex-direction:right;
+  justify-content: space-between;
+  padding-top: 0px;
+  padding-right:30px;
+  height: 70px;
+  width: 70px;
+}
+
+.container p{
+  font-size: 20px;
+  font-weight: bold;
+}
+  </style>    
+  </head>
+    <body background = "{{url_for('static',filename = 'resultcover.png')}}">
+      <a href= "{{url_for('home')}}" ><img src="{{url_for('static',filename = 'newlog.png')}}" class="logo" align="right" title="FlyHigh"></a> 
+      <div class="card-front">
+        <p>{{ prediction }}</p>
+
+      <div class="row">
+        <div class="column">
+          <div class="container">
+            <p>RESTAURANTS</p>
+            <h5>Select your destination to know good restaurants near your airport...</h5>
+            <a href="https://www.opentable.com/landmark/restaurants-near-msp-airport">MSP</a><br>
+            <a href="https://www.opentable.com/landmark/restaurants-near-dtw-airport">DTW</a><br>
+            <a href="https://www.opentable.com/landmark/restaurants-near-jfk-airport">JFK</a><br>
+            <a href="https://www.opentable.com/landmark/restaurants-near-seattle-tacoma-international-airport">SEA</a><br>
+            <a href="https://www.opentable.com/landmark/restaurants-near-hartsfield-jackson-atlanta-international-airport">ALT</a><br>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="container">
+            <p>HOTELS AND INNS</p>
+            <h5>Select your destination to know the nearest hotels near your airport...</h5>
+            <a href="https://www.tripadvisor.com/HotelsNear-g43323-qMSP-Minneapolis_Minnesota.html">MSP</a><br>
+            <a href="https://www.tripadvisor.com/HotelsNear-g42139-qDTW-Detroit_Michigan.html">DTW</a><br>
+            <a href="https://www.tripadvisor.com/HotelsNear-g60763-qJFK-New_York_City_New_York.html">JFK</a><br>
+            <a href="https://www.tripadvisor.com/HotelsNear-g60878-qSEA-Seattle_Washington.html">SEA</a><br>
+            <a href="https://www.tripadvisor.com/HotelsNear-g60898-qATL-Atlanta_Georgia.html">ALT</a><br>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="container">
+            <p>TRANSPORTATION</p>
+            <h5>Select your destination to know about transport facility near your airport...</h5>
+            <a href="https://www.mspairport.com/directions/ground-transportation">MSP</a><br>
+            <a href="https://www.jayride.com/airport-transfer/united-states/detroit-airport-dtw">DTW</a><br>
+            <a href="https://www.jfkairport.com/to-from-airport/taxi-car-and-van-service">JFK</a><br>
+            <a href="https://www.portseattle.org/sea-tac/ground-transportation">SEA</a><br>
+            <a href="https://www.atlanta-airport-cab.com/">ALT</a><br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+
+
+
